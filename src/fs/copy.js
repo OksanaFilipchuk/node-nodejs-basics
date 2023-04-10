@@ -3,8 +3,8 @@ const path = require('path');
 
 const copy = async (path,newPath) => {
 return new Promise((resolve, reject)=>{
-    if(!fs.existsSync(path)){
-        fs.promises.cp(path, newPath, err=>{if(err){console.log(err)}})
+    if(!fs.existsSync(newPath)){
+        fs.cp(path, newPath, { recursive: true }, err=>{if(err){console.log(err)}})
         resolve()
     } else {
         reject(new Error('FS operation failed'))
