@@ -18,4 +18,4 @@ const create = async (path,data) => {
     })
 };
 
-create(path.resolve(__dirname,'fresh.txt'), 'I am fresh and young').catch(err=>console.log(err));
+create(path.resolve(__dirname,'fresh.txt'), 'I am fresh and young').catch(err=>console.log(err.promises));
